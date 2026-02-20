@@ -14,6 +14,10 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: './Sidebar.Geometry.js',
+        replacement: path.resolve(__dirname, 'js/Sidebar.Geometry.js'),
+      },
+      {
         find: './Sidebar.Project.js',
         replacement: path.resolve(__dirname, 'js/Replacement.js'),
       },
