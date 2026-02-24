@@ -39,9 +39,8 @@ function SidebarMaterial(editor) {
   let currentMaterialSlot = 0;
 
   const container = new UIPanel();
-  container.setBorderTop('0');
+  container.setId('g4MaterialPanel');
   container.setDisplay('none');
-  container.setPaddingTop('20px');
 
   // Current material slot (for multi-material objects)
   const materialSlotRow = new UIRow();
@@ -49,8 +48,7 @@ function SidebarMaterial(editor) {
     new UIText(strings.getKey('sidebar/material/slot')).setClass('Label')
   );
   const materialSlotSelect = new UISelect()
-    .setWidth('170px')
-    .setFontSize('12px')
+    .addClass('G4MaterialSlot')
     .onChange(update);
   materialSlotSelect.setOptions({ 0: '' }).setValue(0);
   materialSlotRow.add(materialSlotSelect);
@@ -60,9 +58,7 @@ function SidebarMaterial(editor) {
   const materialCategoryRow = new UIRow();
   materialCategoryRow.add(new UIText('Category').setClass('Label'));
 
-  const materialCategorySelect = new UISelect()
-    .setWidth('150px')
-    .setFontSize('12px');
+  const materialCategorySelect = new UISelect().addClass('G4MaterialSelect');
   materialCategorySelect.setOptions({
     [CATEGORY.ELEMENT]: 'Elements (Periodic Table)',
     [CATEGORY.NIST]: 'NIST Compounds',
@@ -79,7 +75,7 @@ function SidebarMaterial(editor) {
   const elementSelectRow = new UIRow();
   elementSelectRow.add(new UIText('Element').setClass('Label'));
 
-  const elementSelect = new UISelect().setWidth('150px').setFontSize('12px');
+  const elementSelect = new UISelect().addClass('G4MaterialSelect');
   const elementOptions = {};
   getElements().forEach((el) => {
     elementOptions[el.elementType] =
@@ -94,7 +90,7 @@ function SidebarMaterial(editor) {
   const compoundSelectRow = new UIRow();
   compoundSelectRow.add(new UIText('Material').setClass('Label'));
 
-  const compoundSelect = new UISelect().setWidth('150px').setFontSize('12px');
+  const compoundSelect = new UISelect().addClass('G4MaterialSelect');
   compoundSelect.onChange(onMaterialSelect);
   compoundSelectRow.add(compoundSelect);
   container.add(compoundSelectRow);
@@ -103,8 +99,7 @@ function SidebarMaterial(editor) {
   const densityRow = new UIRow();
   densityRow.add(new UIText('Density (g/cm³)').setClass('Label'));
   const densityDisplay = new UIInput()
-    .setWidth('150px')
-    .setFontSize('12px')
+    .addClass('G4MaterialDisplay')
     .setDisabled(true);
   densityRow.add(densityDisplay);
   container.add(densityRow);
@@ -113,8 +108,7 @@ function SidebarMaterial(editor) {
   const energyRow = new UIRow();
   energyRow.add(new UIText('E (eV)').setClass('Label'));
   const energyDisplay = new UIInput()
-    .setWidth('150px')
-    .setFontSize('12px')
+    .addClass('G4MaterialDisplay')
     .setDisabled(true);
   energyRow.add(energyDisplay);
   container.add(energyRow);
