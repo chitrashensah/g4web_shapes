@@ -12,7 +12,7 @@ import {
 } from '../vendor/threejs/editor/js/libs/ui.js';
 import { SetGeometryValueCommand } from '../vendor/threejs/editor/js/commands/SetGeometryValueCommand.js';
 import { SetGeometryCommand } from '../vendor/threejs/editor/js/commands/SetGeometryCommand.js';
-import { getEditorConfig } from '@chitrashensah/geant4-csg';
+import { getEditorConfig } from '/packages/geant4-csg/src/index.js';
 
 function addStopPropagation(input) {
   input.dom.addEventListener('pointerup', (e) => e.stopPropagation());

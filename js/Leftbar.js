@@ -20,7 +20,7 @@ import {
   G4TwistedTrd,
   G4TwistedTubs,
   G4Trap4,
-} from '@chitrashensah/geant4-csg';
+} from '/packages/geant4-csg/src/index.js';
 import { UIDiv, UIPanel } from '../vendor/threejs/editor/js/libs/ui.js';
 import { AddObjectCommand } from '../vendor/threejs/editor/js/commands/AddObjectCommand.js';
 
